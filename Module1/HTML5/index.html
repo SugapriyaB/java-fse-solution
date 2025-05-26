@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <style>
+        /* Internal CSS */
+        #welcomeBanner {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .highlight {
+            background-color: #ffd700;
+            padding: 2px 5px;
+        }
+
+        .event-image {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        video {
+            width: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .caption {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#events">Events</a> |
+        <a href="#contact">Contact</a> |
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <!-- Welcome Banner -->
+    <div id="welcomeBanner">
+        Welcome to our Community Portal! 
+        <span style="color: red; font-weight: bold;">Special offer: 20% off on all event registrations this week!</span>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Events Section -->
+        <section id="events">
+            <h2>Community Events</h2>
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400" alt="Community Festival" title="Annual Festival" class="event-image" ondblclick="enlargeImage(this)">
+                        <div class="caption">Annual Community Festival</div>
+                    </td>
+                    <td>
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400" alt="Food Fair" title="Food Fair" class="event-image" ondblclick="enlargeImage(this)">
+                        <div class="caption">Local Food Fair</div>
+                    </td>
+                    <td>
+                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400" alt="Music Concert" title="Concert" class="event-image" ondblclick="enlargeImage(this)">
+                        <div class="caption">Summer Concert Series</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=400" alt="Art Exhibition" title="Art Show" class="event-image" ondblclick="enlargeImage(this)">
+                        <div class="caption">Art Exhibition</div>
+                    </td>
+                    <td>
+                        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400" alt="Sports Event" title="Sports Day" class="event-image" ondblclick="enlargeImage(this)">
+                        <div class="caption">Community Sports Day</div>
+                    </td>
+                    <td>
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400" alt="Workshop" title="Workshop" class="event-image" ondblclick="enlargeImage(this)">
+                        <div class="caption">Skills Workshop</div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Registration Form -->
+        <section id="registration">
+            <h2>Event Registration</h2>
+            <form id="eventForm" onsubmit="return handleSubmit(event)">
+                <input type="text" name="name" placeholder="Your Name" required autofocus>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="date" name="date" required>
+                <input type="tel" name="phone" placeholder="Phone Number" onblur="validatePhone(this)">
+                <select name="eventType" onchange="showEventFee(this)" id="eventSelect">
+                    <option value="">Select Event Type</option>
+                    <option value="festival">Community Festival</option>
+                    <option value="concert">Concert</option>
+                    <option value="workshop">Workshop</option>
+                </select>
+                <textarea name="message" placeholder="Your Message" onkeyup="countCharacters(this)"></textarea>
+                <div id="charCount">Characters: 0</div>
+                <output name="result"></output>
+                <button type="submit" onclick="showConfirmation()">Register</button>
+            </form>
+        </section>
+
+        <!-- Video Section -->
+        <section id="promo">
+            <div class="video-container">
+                <h2>Event Promo</h2>
+                <video controls oncanplay="videoReady()" poster="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400">
+                    <source src="https://cdn.coverr.co/videos/coverr-a-time-lapse-video-of-people-walking-in-the-city-2633/1080p.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="videoMessage"></div>
+            </div>
+        </section>
+
+        <!-- Geolocation Section -->
+        <section id="location">
+            <h2>Find Nearby Events</h2>
+            <button onclick="findNearbyEvents()">Find Nearby Events</button>
+            <div id="locationInfo"></div>
+        </section>
+
+        <!-- User Preferences -->
+        <section id="preferences">
+            <h2>Preferences</h2>
+            <button onclick="clearPreferences()">Clear Preferences</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Local Community Event Portal</p>
+    </footer>
+
+    <script>
+        // Load saved preferences
+        window.onload = function() {
+            const savedEventType = localStorage.getItem('preferredEventType');
+            if (savedEventType) {
+                document.getElementById('eventSelect').value = savedEventType;
+            }
+        };
+
+        // Form validation and events
+        function validatePhone(input) {
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(input.value)) {
+                alert('Please enter a valid 10-digit phone number');
+                input.focus();
+            }
+        }
+
+        function showEventFee(select) {
+            const fees = {
+                festival: '$50',
+                concert: '$75',
+                workshop: '$25'
+            };
+            alert(`Event fee: ${fees[select.value] || 'TBD'}`);
+            localStorage.setItem('preferredEventType', select.value);
+        }
+
+        function countCharacters(textarea) {
+            document.getElementById('charCount').textContent = 
+                `Characters: ${textarea.value.length}`;
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            form.elements.result.value = 'Registration successful!';
+            return false;
+        }
+
+        function showConfirmation() {
+            alert('Thank you for registering!');
+        }
+
+        // Image handling
+        function enlargeImage(img) {
+            img.style.transform = img.style.transform === 'scale(1.5)' 
+                ? 'scale(1)' 
+                : 'scale(1.5)';
+        }
+
+        // Video handling
+        function videoReady() {
+            document.getElementById('videoMessage').textContent = 'Video ready to play';
+        }
+
+        // Geolocation
+        function findNearbyEvents() {
+            if ("geolocation" in navigator) {
+                const options = {
+                    enableHighAccuracy: true,
+                    timeout: 5000,
+                    maximumAge: 0
+                };
+
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const locationInfo = document.getElementById('locationInfo');
+                        locationInfo.innerHTML = `
+                            <p>Your location:</p>
+                            <p>Latitude: ${position.coords.latitude}</p>
+                            <p>Longitude: ${position.coords.longitude}</p>
+                            <p>Searching for events near you...</p>
+                        `;
+                    },
+                    error => {
+                        alert(`Error: ${error.message}`);
+                    },
+                    options
+                );
+            } else {
+                alert('Geolocation is not supported by your browser');
+            }
+        }
+
+        // Preferences
+        function clearPreferences() {
+            localStorage.clear();
+            sessionStorage.clear();
+            alert('All preferences cleared');
+        }
+
+        // Warn on unfinished form
+        window.onbeforeunload = function(e) {
+            const form = document.getElementById('eventForm');
+            if (form.elements.name.value || form.elements.email.value) {
+                return 'You have unsaved changes. Are you sure you want to leave?';
+            }
+        };
+
+        // Console logging for debugging
+        console.log('Script loaded successfully');
+    </script>
+</body>
+</html>
