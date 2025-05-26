@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <!-- Google Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Internal CSS Example -->
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+    </style>
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="mainHeader">
+        <h1 style="color: red;">Local Community Event Portal</h1> <!-- Inline CSS Example -->
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#bulletin">Bulletin</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Events Section -->
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <div class="event-grid">
+                <div class="eventCard">
+                    <h3>Community Festival</h3>
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400" alt="Festival">
+                    <p>Annual community gathering with food, music, and activities.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+                <div class="eventCard">
+                    <h3>Art Exhibition</h3>
+                    <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=400" alt="Art">
+                    <p>Local artists showcase their latest works.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Table -->
+        <section id="admin">
+            <h2>Event Administration</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Community Festival</td>
+                        <td>2024-06-15</td>
+                        <td>Central Park</td>
+                        <td>Confirmed</td>
+                    </tr>
+                    <tr>
+                        <td>Art Exhibition</td>
+                        <td>2024-07-01</td>
+                        <td>City Gallery</td>
+                        <td>Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Community Bulletin -->
+        <section id="bulletin">
+            <h2>Community Bulletin</h2>
+            <div class="news-columns">
+                <p>Welcome to our community bulletin! Here you'll find the latest updates and news about our vibrant community. Stay informed about upcoming events, local initiatives, and opportunities to get involved.</p>
+                <p>Our community is growing stronger every day thanks to the active participation of residents like you. We encourage everyone to take part in shaping the future of our neighborhood through various programs and events.</p>
+                <p>This season brings exciting new developments, including the expansion of our community center, new youth programs, and environmental initiatives. We're also pleased to announce increased funding for local arts and cultural events.</p>
+                <p>Don't forget to check our calendar regularly for updates on weekly meetings, workshops, and special events. Your participation makes our community stronger!</p>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Local Community Event Portal</p>
+    </footer>
+</body>
+</html>
