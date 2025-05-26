@@ -1,0 +1,20 @@
+// Custom variable overrides
+
+// Colors
+$primary: #6200ea;    // Custom primary color (deep purple)
+$secondary: #03dac6;  // Custom secondary color (teal)
+$success: #00c853;    // Custom success color
+$info: #00b0ff;       // Custom info color
+$warning: #ffd600;    // Custom warning color
+$danger: #f50057;     // Custom danger color
+
+// Border radius
+$border-radius: 0.5rem;         // Default border-radius
+$border-radius-sm: 0.25rem;     // Small border-radius
+$border-radius-lg: 1rem;        // Large border-radius
+$border-radius-pill: 50rem;     // Pill border-radius
+
+// Other customizations
+$enable-shadows: true;          // Enable shadows
+$enable-gradients: true;        // Enable gradients
+$enable-negative-margins: true; // Enable negative margins 

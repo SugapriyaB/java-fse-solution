@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Bootstrap with Sass</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .img-hover {
+            transition: transform 0.3s ease;
+        }
+        .img-hover:hover {
+            transform: scale(1.05);
+        }
+        .card-img-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .card:hover .card-img-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4">Custom Bootstrap with Sass</h1>
+        
+        <!-- Color Examples -->
+        <section class="mb-5">
+            <h2 class="mb-3">Custom Colors</h2>
+            <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-info">Info</button>
+            </div>
+        </section>
+
+        <!-- Border Radius Examples -->
+        <section class="mb-5">
+            <h2 class="mb-3">Custom Border Radius</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Default Radius</h5>
+                            <p class="card-text">This card uses the default border radius.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card rounded-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Small Radius</h5>
+                            <p class="card-text">This card uses the small border radius.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card rounded-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">Large Radius</h5>
+                            <p class="card-text">This card uses the large border radius.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card rounded-pill">
+                        <div class="card-body">
+                            <h5 class="card-title">Pill Radius</h5>
+                            <p class="card-text">This card uses the pill border radius.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shadows Example -->
+        <section class="mb-5">
+            <h2 class="mb-3">Shadows & Gradients</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Card with Shadow</h5>
+                            <p class="card-text">This card demonstrates the custom shadow effect.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-gradient">
+                        <div class="card-body text-white bg-primary">
+                            <h5 class="card-title">Card with Gradient</h5>
+                            <p class="card-text">This card demonstrates the gradient effect.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alert Examples -->
+        <section>
+            <h2 class="mb-3">Contextual Alerts</h2>
+            <div class="alert alert-primary" role="alert">
+                This is a primary alert with custom color!
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                This is a secondary alert with custom color!
+            </div>
+            <div class="alert alert-success" role="alert">
+                This is a success alert with custom color!
+            </div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section class="mb-5">
+            <h2 class="mb-4">Image Gallery</h2>
+            <div class="row g-4">
+                <!-- Card with Overlay -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow rounded-lg overflow-hidden">
+                        <img src="https://cdn.pixabay.com/photo/2019/11/29/14/49/mountains-4661233_1280.jpg" class="card-img img-hover" alt="Nature Landscape">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <div class="text-white">
+                                <h5 class="card-title">Mountain Lake</h5>
+                                <p class="card-text">Serene landscape with custom border radius</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card with Badge -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow rounded-lg position-relative">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg" class="card-img-top img-hover" alt="Technology">
+                        <span class="position-absolute top-0 end-0 badge bg-primary m-3">New</span>
+                        <div class="card-body">
+                            <h5 class="card-title">Modern Tech</h5>
+                            <p class="card-text">Showcasing custom primary color badge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card with Gradient -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow rounded-lg">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_1280.jpg" class="card-img-top img-hover" alt="Architecture">
+                        <div class="card-body bg-gradient bg-secondary text-white">
+                            <h5 class="card-title">Modern Architecture</h5>
+                            <p class="card-text">With custom gradient background</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Cards -->
+        <section class="mb-5">
+            <h2 class="mb-4">Team Profiles</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm hover-shadow">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/01/01/33/beanie-2562646_1280.jpg" class="card-img-top rounded-circle p-3" alt="Team Member 1">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Sarah Johnson</h5>
+                            <p class="card-text text-muted">Designer</p>
+                            <button class="btn btn-outline-primary rounded-pill">Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm hover-shadow">
+                        <img src="https://cdn.pixabay.com/photo/2019/11/10/11/13/portrait-4615553_1280.jpg" class="card-img-top rounded-circle p-3" alt="Team Member 2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mike Smith</h5>
+                            <p class="card-text text-muted">Developer</p>
+                            <button class="btn btn-outline-primary rounded-pill">Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm hover-shadow">
+                        <img src="https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_1280.jpg" class="card-img-top rounded-circle p-3" alt="Team Member 3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Emma Davis</h5>
+                            <p class="card-text text-muted">Manager</p>
+                            <button class="btn btn-outline-primary rounded-pill">Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm hover-shadow">
+                        <img src="https://cdn.pixabay.com/photo/2019/11/11/04/19/portrait-4617035_1280.jpg" class="card-img-top rounded-circle p-3" alt="Team Member 4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">John Wilson</h5>
+                            <p class="card-text text-muted">Engineer</p>
+                            <button class="btn btn-outline-primary rounded-pill">Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Cards with Icons -->
+        <section class="mb-5">
+            <h2 class="mb-4">Features</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm hover-shadow h-100">
+                        <img src="https://cdn.pixabay.com/photo/2017/10/01/00/52/design-2804083_1280.jpg" class="card-img-top" alt="Design">
+                        <div class="card-body">
+                            <div class="badge bg-primary p-3 mb-3 rounded-circle">
+                                <i class="bi bi-brush fs-4"></i>
+                            </div>
+                            <h5 class="card-title">Custom Design</h5>
+                            <p class="card-text">Showcasing custom primary color and border radius</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm hover-shadow h-100">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/22/52/coding-1841550_1280.jpg" class="card-img-top" alt="Development">
+                        <div class="card-body">
+                            <div class="badge bg-secondary p-3 mb-3 rounded-circle">
+                                <i class="bi bi-code-slash fs-4"></i>
+                            </div>
+                            <h5 class="card-title">Development</h5>
+                            <p class="card-text">With custom secondary color and shadows</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm hover-shadow h-100">
+                        <img src="https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_1280.jpg" class="card-img-top" alt="Marketing">
+                        <div class="card-body">
+                            <div class="badge bg-success p-3 mb-3 rounded-circle">
+                                <i class="bi bi-graph-up fs-4"></i>
+                            </div>
+                            <h5 class="card-title">Marketing</h5>
+                            <p class="card-text">Using custom success color and gradients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="mb-5">
+            <h2 class="mb-4">Upcoming Events</h2>
+            
+            <!-- Featured Event -->
+            <div class="card mb-4 border-0 shadow-lg rounded-lg overflow-hidden">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg" 
+                             class="img-fluid h-100 w-100" style="object-fit: cover;" 
+                             alt="Music Festival">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body p-4">
+                            <span class="badge bg-primary mb-2">Featured Event</span>
+                            <h3 class="card-title">Summer Music Festival 2024</h3>
+                            <p class="card-text">Join us for the biggest music festival of the year featuring top artists from around the world.</p>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-calendar3 me-2"></i>
+                                <span>June 15-17, 2024</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-geo-alt me-2"></i>
+                                <span>Central Park, New York</span>
+                            </div>
+                            <button class="btn btn-primary rounded-pill">Get Tickets</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Grid -->
+            <div class="row g-4">
+                <!-- Conference Event -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow hover-shadow h-100">
+                        <img src="https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_1280.jpg" 
+                             class="card-img-top" style="height: 200px; object-fit: cover;" 
+                             alt="Tech Conference">
+                        <div class="card-body">
+                            <span class="badge bg-info mb-2">Conference</span>
+                            <h5 class="card-title">Tech Innovation Summit</h5>
+                            <p class="card-text">Explore the latest trends in technology and innovation.</p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-calendar3 me-2"></i>
+                                <small>July 10, 2024</small>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm rounded-pill">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workshop Event -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow hover-shadow h-100">
+                        <img src="https://cdn.pixabay.com/photo/2015/07/02/10/40/writing-828911_1280.jpg" 
+                             class="card-img-top" style="height: 200px; object-fit: cover;" 
+                             alt="Art Workshop">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Workshop</span>
+                            <h5 class="card-title">Creative Art Workshop</h5>
+                            <p class="card-text">Hands-on workshop for aspiring artists and creators.</p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-calendar3 me-2"></i>
+                                <small>July 15, 2024</small>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm rounded-pill">Register Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exhibition Event -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow hover-shadow h-100">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/18/16/16/architecture-1835647_1280.jpg" 
+                             class="card-img-top" style="height: 200px; object-fit: cover;" 
+                             alt="Art Exhibition">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Exhibition</span>
+                            <h5 class="card-title">Modern Art Exhibition</h5>
+                            <p class="card-text">Experience contemporary art from emerging artists.</p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-calendar3 me-2"></i>
+                                <small>July 20, 2024</small>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm rounded-pill">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food Festival -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow hover-shadow">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_1280.jpg" 
+                             class="card-img-top" style="height: 250px; object-fit: cover;" 
+                             alt="Food Festival">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">Food & Drinks</span>
+                            <h5 class="card-title">International Food Festival</h5>
+                            <p class="card-text">Taste cuisines from around the world at this grand food festival.</p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-calendar3 me-2"></i>
+                                <small>August 5-7, 2024</small>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm rounded-pill">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports Event -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow hover-shadow">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg" 
+                             class="card-img-top" style="height: 250px; object-fit: cover;" 
+                             alt="Sports Event">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Sports</span>
+                            <h5 class="card-title">City Marathon 2024</h5>
+                            <p class="card-text">Join thousands of runners in this annual city marathon event.</p>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-calendar3 me-2"></i>
+                                <small>September 1, 2024</small>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm rounded-pill">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Events Timeline -->
+            <div class="mt-5">
+                <h3 class="mb-4">Event Timeline</h3>
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 text-center border-end">
+                                <img src="https://cdn.pixabay.com/photo/2015/01/16/15/00/concert-601537_1280.jpg" 
+                                     class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;" 
+                                     alt="Concert">
+                                <h6>Summer Concert</h6>
+                                <small class="text-muted">June 20</small>
+                            </div>
+                            <div class="col-md-3 text-center border-end">
+                                <img src="https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg" 
+                                     class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;" 
+                                     alt="Dance Show">
+                                <h6>Dance Festival</h6>
+                                <small class="text-muted">July 5</small>
+                            </div>
+                            <div class="col-md-3 text-center border-end">
+                                <img src="https://cdn.pixabay.com/photo/2015/05/15/14/50/concert-768722_1280.jpg" 
+                                     class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;" 
+                                     alt="Theater Show">
+                                <h6>Theater Night</h6>
+                                <small class="text-muted">July 15</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <img src="https://cdn.pixabay.com/photo/2016/11/22/19/15/audience-1850119_1280.jpg" 
+                                     class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;" 
+                                     alt="Comedy Night">
+                                <h6>Comedy Night</h6>
+                                <small class="text-muted">July 30</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
